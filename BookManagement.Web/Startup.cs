@@ -1,4 +1,8 @@
-﻿namespace BookManagement.Web
+﻿using BookManagement.Web.Data;
+using BookManagement.Web.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace BookManagement.Web
 {
     public class Startup
     {
@@ -11,6 +15,8 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BooksDbContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
+            services.AddScoped<IRegisterRepository, RegisterRepository>();
             services.AddRazorPages();
         }
 
