@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMemoryDbTest", "InMemoryDbTest\InMemoryDbTest.csproj", "{20402FF4-A540-4373-BDA8-1169A09C07A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.Web", "BookManagement.Web\BookManagement.Web.csproj", "{472C495D-54AF-41A6-B37A-6B6D506326D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20402FF4-A540-4373-BDA8-1169A09C07A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20402FF4-A540-4373-BDA8-1169A09C07A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20402FF4-A540-4373-BDA8-1169A09C07A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20402FF4-A540-4373-BDA8-1169A09C07A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472C495D-54AF-41A6-B37A-6B6D506326D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472C495D-54AF-41A6-B37A-6B6D506326D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472C495D-54AF-41A6-B37A-6B6D506326D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472C495D-54AF-41A6-B37A-6B6D506326D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEE9FD8C-6572-4349-9BED-C01A065D9FB9}
+	EndGlobalSection
+EndGlobal
