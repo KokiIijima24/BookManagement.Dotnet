@@ -1,5 +1,4 @@
-﻿using BookManagement.Web.Data;
-using BookManagement.Web.Models;
+﻿using BookManagement.Web.Models;
 
 namespace BookManagement.Web.Services
 {

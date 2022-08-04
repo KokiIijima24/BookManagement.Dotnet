@@ -1,5 +1,4 @@
-﻿using BookManagement.Web.Data;
-using BookManagement.Web.Models;
+﻿using BookManagement.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookManagement.Web
@@ -33,6 +32,9 @@ namespace BookManagement.Web
             app.UseRouting();
             app.UseAuthorization();
             app.MapRazorPages();
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             app.Run();
         }
     }

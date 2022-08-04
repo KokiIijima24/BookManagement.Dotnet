@@ -1,4 +1,4 @@
-﻿using BookManagement.Web.Data;
+﻿using BookManagement.Web;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookManagement.Web.Models
