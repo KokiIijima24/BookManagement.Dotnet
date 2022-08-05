@@ -1,4 +1,4 @@
-﻿using BookManagement.Web.Data;
+﻿using BookManagement.Web;
 using BookManagement.Web.Models;
 using BookManagement.Web.Services;
 using Microsoft.EntityFrameworkCore;
@@ -28,8 +28,8 @@ namespace InMemoryDbTest
                 var service = new BookService(context);
                 service.Add(new Book
                 {
-                    ISBN = "978-4150117481",
-                    Title = "月は無慈悲な夜の女王"
+                    ISBN = "04632170A11526000000",
+                    Title = "四畳半タイムマシンブルース (角川文庫)"
                 });
             }
 
@@ -38,8 +38,8 @@ namespace InMemoryDbTest
             {
 
                 Assert.Equal(1, context.Books.Count());
-                var book = context.Books.Single(e => e.ISBN == "978-4150117481");
-                Assert.Equal("月は無慈悲な夜の女王", book.Title);
+                var book = context.Books.Single(e => e.ISBN == "04632170A11526000000");
+                Assert.Equal("四畳半タイムマシンブルース (角川文庫)", book.Title);
             }
         }
     }
