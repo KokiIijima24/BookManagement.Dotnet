@@ -9,7 +9,7 @@ namespace BookManagement.Web.Models
         [Required]
         public string Name { get; set; }
 
-        [Range(40, 60)]
+        [Range(0, 60)]
         public int Age { get; set; }
     }
 }
