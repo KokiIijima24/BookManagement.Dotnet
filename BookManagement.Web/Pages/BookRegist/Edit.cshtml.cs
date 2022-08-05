@@ -13,9 +13,9 @@ namespace BookManagement.Web.Pages
 {
     public class EditModel : PageModel
     {
-        private readonly BookManagement.Web.BooksDbContext _context;
+        private readonly BookManagement.Web.BookManagementDbContext _context;
 
-        public EditModel(BookManagement.Web.BooksDbContext context)
+        public EditModel(BookManagement.Web.BookManagementDbContext context)
         {
             _context = context;
         }

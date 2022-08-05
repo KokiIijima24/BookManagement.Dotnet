@@ -12,9 +12,9 @@ namespace BookManagement.Web.Pages
 {
     public class DetailsModel : PageModel
     {
-        private readonly BookManagement.Web.BooksDbContext _context;
+        private readonly BookManagement.Web.BookManagementDbContext _context;
 
-        public DetailsModel(BookManagement.Web.BooksDbContext context)
+        public DetailsModel(BookManagement.Web.BookManagementDbContext context)
         {
             _context = context;
         }

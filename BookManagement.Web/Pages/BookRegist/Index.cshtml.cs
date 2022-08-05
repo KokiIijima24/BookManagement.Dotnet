@@ -12,9 +12,9 @@ namespace BookManagement.Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly BookManagement.Web.BooksDbContext _context;
+        private readonly BookManagement.Web.BookManagementDbContext _context;
 
-        public IndexModel(BookManagement.Web.BooksDbContext context)
+        public IndexModel(BookManagement.Web.BookManagementDbContext context)
         {
             _context = context;
         }

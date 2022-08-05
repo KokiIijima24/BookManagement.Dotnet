@@ -12,9 +12,9 @@ namespace BookManagement.Web.Pages
 {
     public class DeleteModel : PageModel
     {
-        private readonly BookManagement.Web.BooksDbContext _context;
+        private readonly BookManagement.Web.BookManagementDbContext _context;
 
-        public DeleteModel(BookManagement.Web.BooksDbContext context)
+        public DeleteModel(BookManagement.Web.BookManagementDbContext context)
         {
             _context = context;
         }

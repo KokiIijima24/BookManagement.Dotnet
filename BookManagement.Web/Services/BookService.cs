@@ -5,10 +5,10 @@ namespace BookManagement.Web.Services
     public class BookService
     {
         // DI した DbContext を保持
-        BooksDbContext Context { get; }
+        BookManagementDbContext Context { get; }
 
         // DbContext を DI（依存オブジェクトの注入）する
-        public BookService(BooksDbContext context) =>
+        public BookService(BookManagementDbContext context) =>
             Context = context;
 
         // 書籍追加

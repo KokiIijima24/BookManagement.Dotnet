@@ -5,6 +5,8 @@ namespace BookManagement.Web
 {
     public class BookRegistController : Controller
     {
+        private IRegisterService
+
         // GET: BookRegist
         public ActionResult Index()
         {

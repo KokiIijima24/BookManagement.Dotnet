@@ -14,9 +14,9 @@ namespace BookManagement.Web.Models
 
     public class RegisterRepository : IRegisterRepository
     {
-        private readonly BooksDbContext context;
+        private readonly BookManagementDbContext context;
 
-        public RegisterRepository(BooksDbContext dbContext)
+        public RegisterRepository(BookManagementDbContext dbContext)
         {
             context = dbContext;
         }

@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookManagement.Web
 {
-    public class BooksDbContext : DbContext
+    public class BookManagementDbContext : DbContext
     {
-        public BooksDbContext(DbContextOptions<BooksDbContext> options)
+        public BookManagementDbContext(DbContextOptions<BookManagementDbContext> options)
             : base(options) { }
 
         public DbSet<Book> Books { get; set; }
 
-        public DbSet<BookManagement.Web.Models.Register> Register { get; set; }
+        public DbSet<Register> Register { get; set; }
     }
 }

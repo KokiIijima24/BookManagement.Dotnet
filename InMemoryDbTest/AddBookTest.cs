@@ -11,18 +11,18 @@ using Xunit;
 
 namespace InMemoryDbTest
 {
-    public class BooksDbContextTest
+    public class AddBookTest
     {
         [Fact]
-        public void Add_writes_to_database()
+        public void 新しい書籍の登録を行う()
         {
             // インメモリ DB を使うオプション
-            var options = new DbContextOptionsBuilder<BooksDbContext>()
+            var options = new DbContextOptionsBuilder<BookManagementDbContext>()
                 .UseInMemoryDatabase(databaseName: "Add_writes_to_database")
                 .Options;
 
             // 本を追加。※using ステートメントで一度 DB との接続を切る。
-            using (var context = new BooksDbContext(options)) // インメモリ DB を使うオプション設定を渡す
+            using (var context = new BookManagementDbContext(options)) // インメモリ DB を使うオプション設定を渡す
             {
                 // サービスクラスをインスタンス化しデータベースコンテキストを DI
                 var service = new BookService(context);
@@ -34,7 +34,7 @@ namespace InMemoryDbTest
             }
 
             // 再びインメモリ DB から値を取り出してテスト
-            using (var context = new BooksDbContext(options))
+            using (var context = new BookManagementDbContext(options))
             {
 
                 Assert.Equal(1, context.Books.Count());

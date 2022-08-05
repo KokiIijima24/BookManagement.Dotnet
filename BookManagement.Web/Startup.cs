@@ -14,7 +14,7 @@ namespace BookManagement.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BooksDbContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
+            services.AddDbContext<BookManagementDbContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
             services.AddScoped<IRegisterRepository, RegisterRepository>();
             services.AddRazorPages();
         }
