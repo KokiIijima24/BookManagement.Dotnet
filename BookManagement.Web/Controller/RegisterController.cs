@@ -1,14 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BookManagement.Web.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookManagement.Web
 {
     public class RegisterController : Controller
     {
+        private IRegisterRepository context;
+
+        public RegisterController(IRegisterRepository appDbContext)
+        {
+            context = appDbContext;
+        }
+
         // GET: RegisterController
         public ActionResult Index()
         {
-            return View();
+            return Ok(context.ListAsync());
         }
 
         // GET: RegisterController/Details/5
@@ -26,13 +34,14 @@ namespace BookManagement.Web
         // POST: RegisterController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> CreateAsync(Register register)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                await context.CreateAsync(register);
+                return RedirectToAction("Index");
             }
-            catch
+            else
             {
                 return View();
             }

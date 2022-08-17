@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BookManagement.Web.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookManagement.Web
 {
     public class BookRegistController : Controller
     {
-        private IRegisterService
 
         // GET: BookRegist
         public ActionResult Index()
@@ -27,8 +27,7 @@ namespace BookManagement.Web
 
         // POST: BookRegist/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Register register)
         {
             try
             {

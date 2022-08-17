@@ -11,7 +11,7 @@ using Xunit;
 
 namespace InMemoryDbTest
 {
-    internal class AddRegisterTest
+    public class AddRegisterTest
     {
         [Fact]
         public void Test_Create_POST_InvalidModelState()
