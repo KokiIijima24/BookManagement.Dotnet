@@ -1,7 +1,4 @@
-﻿
-
-using BookManagement.API;
-using BookManagement.API.Models;
+﻿using BookManagement.API.Models;
 
 namespace BookManagement.API.Services
 {

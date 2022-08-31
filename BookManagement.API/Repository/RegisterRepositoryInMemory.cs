@@ -58,5 +58,25 @@ namespace BookManagement.API.Repository
                 items.Add(register);
             });
         }
+
+        Task<Register> IRegisterRepository.CreateAsync(Register register)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Register> IRegisterRepository.DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Register> IRegisterRepository.UpdateAsync(Register register)
+        {
+            return Task.Run(() =>
+            {
+                var item = items.RemoveAll(x => x.Id == register.Id);
+                items.Add(register);
+                return register;
+            });
+        }
     }
 }

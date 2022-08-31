@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BookManagement.Web;
-using BookManagement.Web.Models;
 
 namespace BookManagement.Web.Pages
 {
@@ -20,7 +15,7 @@ namespace BookManagement.Web.Pages
         }
 
         [BindProperty]
-      public Register Register { get; set; } = default!;
+        public Register Register { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,7 +30,7 @@ namespace BookManagement.Web.Pages
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Register = register;
             }

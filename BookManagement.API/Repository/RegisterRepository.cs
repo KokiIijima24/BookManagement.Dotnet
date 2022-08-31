@@ -6,9 +6,9 @@ namespace BookManagement.API.Models
     {
         Task<Register> GetByIdAsync(int id);
         Task<List<Register>> ListAsync();
-        Task CreateAsync(Register register);
-        Task UpdateAsync(Register register);
-        Task DeleteAsync(int id);
+        Task<Register> CreateAsync(Register register);
+        Task<Register> UpdateAsync(Register register);
+        Task<Register> DeleteAsync(int id);
     }
 
     /// <summary>
@@ -33,22 +33,25 @@ namespace BookManagement.API.Models
             return context.Register.ToListAsync();
         }
 
-        public Task CreateAsync(Register register)
+        public async Task<Register> CreateAsync(Register register)
         {
             context.Register.Add(register);
-            return context.SaveChangesAsync();
+            await context.SaveChangesAsync();
+            return register;
         }
 
-        public Task UpdateAsync(Register register)
+        public async Task<Register> UpdateAsync(Register register)
         {
             context.Entry(register).State = EntityState.Modified;
-            return context.SaveChangesAsync();
+            await context.SaveChangesAsync();
+            return register;
         }
-        public async Task DeleteAsync(int id)
+        public async Task<Register> DeleteAsync(int id)
         {
             var r = await GetByIdAsync(id);
             context.Remove(r);
             await context.SaveChangesAsync();
+            return r;
         }
     }
 }

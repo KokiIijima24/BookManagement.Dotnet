@@ -1,20 +1,16 @@
-﻿using BookManagement.Web;
-using BookManagement.Web.Models;
+﻿using BookManagement;
+using BookManagement.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace InMemoryDbTest
 {
-    public class AddRegisterTest
+    public class RegisterTest
     {
         [Fact]
-        public void Test_Create_POST_InvalidModelState()
+        public async Task Test_Create_POST_InvalidModelStateAsync()
         {
             // Arrange
             var r = new Register()
@@ -25,15 +21,15 @@ namespace InMemoryDbTest
             };
             var mockRepo = new Mock<IRegisterRepository>();
             mockRepo.Setup(repo => repo.CreateAsync(It.IsAny<Register>()));
-            var controller = new RegisterController(mockRepo.Object);
+            var controller = new BookRegistController(mockRepo.Object);
             controller.ModelState.AddModelError("Name", "Name is required");
 
             // Act
-            var result = controller.Create(r);
+            var result =await controller.CreateAsync(r);
 
             // Assert
-            var viewResult = Assert.IsType<ViewResult>(result);
-            Assert.Null(viewResult.ViewData.Model);
+            var viewResult = Assert.IsType<ActionResult>(result);
+            Assert.Equal(StatusCodeResult.);
             mockRepo.Verify();
         }
     }
