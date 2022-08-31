@@ -8,3 +8,6 @@
 /InMemoryDbTest/obj
 /BookManagement.Web/bin/Debug/net6.0
 /BookManagement.Web/wwwroot
+
+bin/
+obj/
