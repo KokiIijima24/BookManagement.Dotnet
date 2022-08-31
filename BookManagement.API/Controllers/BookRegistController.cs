@@ -42,45 +42,17 @@ namespace BookManagement
         }
 
         [HttpPut]
-        public Task<ActionResult> Edit(Register register)
+        public async Task<ActionResult> Edit(Register register)
         {
-            return View();
+            await context.UpdateAsync(register);
+            return Ok();
         }
 
-        // // POST: BookRegist/Edit/5
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public ActionResult Edit(int id, IFormCollection collection)
-        // {
-        //     try
-        //     {
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     catch
-        //     {
-        //         return View();
-        //     }
-        // }
-
-        // // GET: BookRegist/Delete/5
-        // public ActionResult Delete(int id)
-        // {
-        //     return View();
-        // }
-
-        // // POST: BookRegist/Delete/5
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public ActionResult Delete(int id, IFormCollection collection)
-        // {
-        //     try
-        //     {
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     catch
-        //     {
-        //         return View();
-        //     }
-        // }
+        [HttpDelete("id")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            await context.DeleteAsync(id);
+            return Ok();
+        }
     }
 }
