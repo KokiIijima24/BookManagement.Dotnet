@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Threading.Tasks;
 using Xunit;
+using System.Net;
+using System.Collections.Generic;
 
-namespace InMemoryDbTest
+namespace BookManagement.UnitTest
 {
     public class RegisterTest
     {
@@ -25,11 +27,12 @@ namespace InMemoryDbTest
             controller.ModelState.AddModelError("Name", "Name is required");
 
             // Act
-            var result =await controller.CreateAsync(r);
+            var result = await controller.CreateAsync(r);
 
             // Assert
-            var viewResult = Assert.IsType<ActionResult>(result);
-            Assert.Equal(StatusCodeResult.);
+            var viewResult = Assert.IsType<ObjectResult>(result);
+            var model = Assert.IsAssignableFrom<Register>(viewResult.Value);
+            Assert.Equal(4, model.Id);
             mockRepo.Verify();
         }
     }
