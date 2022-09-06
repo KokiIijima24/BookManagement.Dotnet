@@ -1,5 +1,5 @@
 ﻿using BookManagement.API.Models;
-using Microsoft.AspNetCore.Http;
+using BookManagement.API.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookManagement
@@ -18,13 +18,13 @@ namespace BookManagement
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Register>>> List()
         {
-            return await context.ListAsync();
+            return Ok(await context.ListAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Register>> Details(int id)
         {
-            return await context.GetByIdAsync(id);
+            return Ok(await context.GetByIdAsync(id));
         }
 
         [HttpPost]
@@ -32,8 +32,8 @@ namespace BookManagement
         {
             try
             {
-                await context.CreateAsync(register);
-                return Ok();
+                var result = await context.CreateAsync(register);
+                return Ok(result);
             }
             catch
             {
@@ -44,15 +44,13 @@ namespace BookManagement
         [HttpPut]
         public async Task<ActionResult> Edit(Register register)
         {
-            await context.UpdateAsync(register);
-            return Ok();
+            return Ok(await context.UpdateAsync(register));
         }
 
         [HttpDelete("id")]
         public async Task<ActionResult> Delete(int id)
         {
-            await context.DeleteAsync(id);
-            return Ok();
+            return Ok(await context.DeleteAsync(id));
         }
     }
 }

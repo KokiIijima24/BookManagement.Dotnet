@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using BookManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BookManagement.Web;
-using BookManagement.Web.Models;
 
 namespace BookManagement.Web.Pages
 {
@@ -19,7 +13,7 @@ namespace BookManagement.Web.Pages
             _context = context;
         }
 
-        public IList<Register> Register { get;set; } = default!;
+        public IList<Register> Register { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

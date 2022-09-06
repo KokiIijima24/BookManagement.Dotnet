@@ -1,5 +1,4 @@
-﻿using BookManagement.Web;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BookManagement.Web.Models
 {

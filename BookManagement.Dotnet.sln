@@ -4,10 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMemoryDbTest", "InMemoryDbTest\InMemoryDbTest.csproj", "{20402FF4-A540-4373-BDA8-1169A09C07A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9579DA8C-CE7D-48E0-8701-BE5236934B63} = {9579DA8C-CE7D-48E0-8701-BE5236934B63}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.Web", "BookManagement.Web\BookManagement.Web.csproj", "{472C495D-54AF-41A6-B37A-6B6D506326D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManagement.API", "BookManagement.API\BookManagement.API.csproj", "{9579DA8C-CE7D-48E0-8701-BE5236934B63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.UnitTest", "BookManagement.UnitTest\BookManagement.UnitTest.csproj", "{03745E25-95C5-4803-B662-6C6168A37DDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +32,10 @@ Global
 		{9579DA8C-CE7D-48E0-8701-BE5236934B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9579DA8C-CE7D-48E0-8701-BE5236934B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9579DA8C-CE7D-48E0-8701-BE5236934B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03745E25-95C5-4803-B662-6C6168A37DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03745E25-95C5-4803-B662-6C6168A37DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03745E25-95C5-4803-B662-6C6168A37DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03745E25-95C5-4803-B662-6C6168A37DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

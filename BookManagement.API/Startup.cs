@@ -16,7 +16,7 @@ namespace BookManagement.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookManagementDbContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
-            
+
             // Repositoryを切り替えられる
             //services.AddScoped<IRegisterRepository, RegisterRepository>();
             services.AddScoped<IRegisterRepository, RegisterRepositoryInMemory>();

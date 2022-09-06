@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BookManagement.Web;
-using BookManagement.Web.Models;
 
 namespace BookManagement.Web.Pages
 {
@@ -30,7 +24,7 @@ namespace BookManagement.Web.Pages
                 return NotFound();
             }
 
-            var register =  await _context.Register.FirstOrDefaultAsync(m => m.Id == id);
+            var register = await _context.Register.FirstOrDefaultAsync(m => m.Id == id);
             if (register == null)
             {
                 return NotFound();
@@ -71,7 +65,7 @@ namespace BookManagement.Web.Pages
 
         private bool RegisterExists(int id)
         {
-          return (_context.Register?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Register?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
