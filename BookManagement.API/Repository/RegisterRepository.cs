@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookManagement.API.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace BookManagement.API.Models
+namespace BookManagement.API.Repository
 {
     public interface IRegisterRepository
     {
