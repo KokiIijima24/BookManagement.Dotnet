@@ -28,8 +28,14 @@ namespace BookManagement
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateAsync(Register register)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<ObjectResult> CreateAsync([FromBody] Register register)
         {
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+
             try
             {
                 var result = await context.CreateAsync(register);

@@ -1,11 +1,9 @@
-﻿using BookManagement;
-using BookManagement.API.Models;
+﻿using BookManagement.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Threading.Tasks;
 using Xunit;
-using System.Net;
-using System.Collections.Generic;
+using BookManagement.API.Repository;
 
 namespace BookManagement.UnitTest
 {
@@ -18,7 +16,7 @@ namespace BookManagement.UnitTest
             var r = new Register()
             {
                 Id = 4,
-                Name = "Test Four",
+                //Name = "Test Four",
                 Age = 59
             };
             var mockRepo = new Mock<IRegisterRepository>();
@@ -26,13 +24,12 @@ namespace BookManagement.UnitTest
             var controller = new BookRegistController(mockRepo.Object);
             controller.ModelState.AddModelError("Name", "Name is required");
 
+
             // Act
             var result = await controller.CreateAsync(r);
 
             // Assert
-            var viewResult = Assert.IsType<ObjectResult>(result);
-            var model = Assert.IsAssignableFrom<Register>(viewResult.Value);
-            Assert.Equal(4, model.Id);
+            Assert.IsType<BadRequestObjectResult>(result);
             mockRepo.Verify();
         }
     }
