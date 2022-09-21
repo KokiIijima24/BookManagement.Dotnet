@@ -7,23 +7,22 @@ using BookManagement.API.Repository;
 
 namespace BookManagement.UnitTest
 {
-    public class RegisterTest
+    public class AccountTest
     {
         [Fact]
         public async Task Test_Create_POST_InvalidModelStateAsync()
         {
             // Arrange
-            var r = new Register()
+            var r = new Account()
             {
                 Id = 4,
                 //Name = "Test Four",
                 Age = 59
             };
-            var mockRepo = new Mock<IRegisterRepository>();
-            mockRepo.Setup(repo => repo.CreateAsync(It.IsAny<Register>()));
+            var mockRepo = new Mock<IAccountRepository>();
+            mockRepo.Setup(repo => repo.CreateAsync(It.IsAny<Account>()));
             var controller = new BookRegistController(mockRepo.Object);
             controller.ModelState.AddModelError("Name", "Name is required");
-
 
             // Act
             var result = await controller.CreateAsync(r);

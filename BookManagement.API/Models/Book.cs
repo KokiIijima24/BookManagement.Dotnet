@@ -7,6 +7,6 @@ namespace BookManagement.API.Models
         [Key] public string ISBN { get; set; }
         public string Title { get; set; }
 
-        public int RegisterId { get; set; }
+        public int AccountId { get; set; }
     }
 }

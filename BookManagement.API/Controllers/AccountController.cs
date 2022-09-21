@@ -8,37 +8,37 @@ namespace BookManagement
     [Route("api/[controller]")]
     public class BookRegistController : ControllerBase
     {
-        private IRegisterRepository context;
+        private IAccountRepository context;
 
-        public BookRegistController(IRegisterRepository appDbContext)
+        public BookRegistController(IAccountRepository appDbContext)
         {
             context = appDbContext;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Register>>> List()
+        public async Task<ActionResult<IEnumerable<Account>>> List()
         {
             return Ok(await context.ListAsync());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Register>> Details(int id)
+        public async Task<ActionResult<Account>> Details(int id)
         {
             return Ok(await context.GetByIdAsync(id));
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ObjectResult> CreateAsync([FromBody] Register register)
+        public async Task<ObjectResult> CreateAsync([FromBody] Account Account)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
             try
             {
-                var result = await context.CreateAsync(register);
+                var result = await context.CreateAsync(Account);
                 return Ok(result);
             }
             catch
@@ -48,9 +48,9 @@ namespace BookManagement
         }
 
         [HttpPut]
-        public async Task<ActionResult> Edit(Register register)
+        public async Task<ActionResult> Edit(Account Account)
         {
-            return Ok(await context.UpdateAsync(register));
+            return Ok(await context.UpdateAsync(Account));
         }
 
         [HttpDelete("id")]

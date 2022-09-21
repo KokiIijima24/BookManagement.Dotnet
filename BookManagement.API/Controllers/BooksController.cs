@@ -6,11 +6,11 @@ namespace BookManagement
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BookController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private IBookRepository context;
 
-        public BookController(IBookRepository appDbContext)
+        public BooksController(IBookRepository appDbContext)
         {
             context = appDbContext;
         }

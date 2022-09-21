@@ -18,8 +18,8 @@ namespace BookManagement.API
             services.AddDbContext<BookManagementDbContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
 
             // Repositoryを切り替えられる
-            //services.AddScoped<IRegisterRepository, RegisterRepository>();
-            services.AddScoped<IRegisterRepository, RegisterRepositoryInMemory>();
+            //services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IAccountRepository, AccountRepositoryInMemory>();
             services.AddRazorPages();
         }
 

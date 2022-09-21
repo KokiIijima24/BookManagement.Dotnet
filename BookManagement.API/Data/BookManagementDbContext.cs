@@ -10,6 +10,6 @@ namespace BookManagement.API
 
         public DbSet<Book> Books { get; set; }
 
-        public DbSet<Register> Register { get; set; }
+        public DbSet<Account> Account { get; set; }
     }
 }

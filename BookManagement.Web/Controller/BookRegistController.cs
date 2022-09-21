@@ -26,7 +26,7 @@ namespace BookManagement.Web
 
         // POST: BookRegist/Create
         [HttpPost]
-        public ActionResult Create(Register register)
+        public ActionResult Create(Register Register)
         {
             try
             {
