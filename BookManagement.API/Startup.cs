@@ -20,6 +20,7 @@ namespace BookManagement.API
             // Repositoryを切り替えられる
             //services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IAccountRepository, AccountRepositoryInMemory>();
+            services.AddScoped<IBookRepository, BookRepository>();
             services.AddRazorPages();
         }
 

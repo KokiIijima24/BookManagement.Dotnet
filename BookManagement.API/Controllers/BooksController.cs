@@ -18,7 +18,7 @@ namespace BookManagement
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> List()
         {
-            return Ok(await context.ListAsync());
+            return Ok(context.ListAsync(""));
         }
 
         [HttpGet("{id}")]
