@@ -112,10 +112,10 @@ paths:
       responses:
         '200':
           description: Success
-  "/api/BookRegist":
+  "/api/Account":
     get:
       tags:
-      - BookRegist
+      - Account
       responses:
         '200':
           description: Success
@@ -137,7 +137,7 @@ paths:
                   "$ref": "#/components/schemas/Account"
     post:
       tags:
-      - BookRegist
+      - Account
       requestBody:
         content:
           application/json:
@@ -154,7 +154,7 @@ paths:
           description: Success
     put:
       tags:
-      - BookRegist
+      - Account
       requestBody:
         content:
           application/json:
@@ -169,10 +169,10 @@ paths:
       responses:
         '200':
           description: Success
-  "/api/BookRegist/{id}":
+  "/api/Account/{id}":
     get:
       tags:
-      - BookRegist
+      - Account
       parameters:
       - name: id
         in: path
@@ -193,10 +193,10 @@ paths:
             text/json:
               schema:
                 "$ref": "#/components/schemas/Account"
-  "/api/BookRegist/id":
+  "/api/Account/id":
     delete:
       tags:
-      - BookRegist
+      - Account
       parameters:
       - name: id
         in: query

@@ -21,7 +21,7 @@ namespace BookManagement.UnitTest
             };
             var mockRepo = new Mock<IAccountRepository>();
             mockRepo.Setup(repo => repo.CreateAsync(It.IsAny<Account>()));
-            var controller = new BookRegistController(mockRepo.Object);
+            var controller = new AccountController(mockRepo.Object);
             controller.ModelState.AddModelError("Name", "Name is required");
 
             // Act
