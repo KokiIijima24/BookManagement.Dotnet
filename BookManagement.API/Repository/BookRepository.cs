@@ -6,7 +6,7 @@ namespace BookManagement.API.Repository
     public interface IBookRepository
     {
         Task<Book> GetByIdAsync(string isbn);
-        Task<List<Book>> ListAsync();
+        Task<List<Book>> ListAsync(string bookTitle);
         Task<Book> CreateAsync(Book book);
         Task<Book> UpdateAsync(Book book);
         Task<Book> DeleteAsync(string isbn);
@@ -26,9 +26,9 @@ namespace BookManagement.API.Repository
             return context.Books.FirstOrDefaultAsync(s => s.ISBN == isbn);
         }
 
-        public Task<List<Book>> ListAsync()
+        public IEnumerable<Book> ListAsync(string terms)
         {
-            return context.Books.ToListAsync();
+            return context.Books.Where(_ => _.Title.Contains(terms));
         }
 
         public async Task<Book> CreateAsync(Book Book)
@@ -51,6 +51,11 @@ namespace BookManagement.API.Repository
             context.Remove(r);
             await context.SaveChangesAsync();
             return r;
+        }
+
+        Task<List<Book>> IBookRepository.ListAsync(string bookTitle)
+        {
+            throw new NotImplementedException();
         }
     }
 }
