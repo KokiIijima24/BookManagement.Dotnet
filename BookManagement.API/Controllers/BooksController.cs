@@ -6,11 +6,11 @@ namespace BookManagement
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BookController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private IBookRepository context;
 
-        public BookController(IBookRepository appDbContext)
+        public BooksController(IBookRepository appDbContext)
         {
             context = appDbContext;
         }
@@ -18,7 +18,7 @@ namespace BookManagement
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> List()
         {
-            return Ok(await context.ListAsync());
+            return Ok(context.ListAsync(""));
         }
 
         [HttpGet("{id}")]
