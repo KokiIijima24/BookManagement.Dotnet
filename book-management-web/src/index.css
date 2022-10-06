@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 { margin-bottom : 24px}
+/* 垂直方向のマージンを統一 */
+ 
+h1 {
+    font-size : 48px; 
+    line-height : 1;    
+    /* 要素の高さ：48px（要素を配置するときの高さの基準の2倍）*/
+}
+ 
+h2 {
+    font-size : 36px;
+    line-height : 1.3333;   
+    /* 要素の高さ：48px（要素を配置するときの高さの基準の2倍） */
+}
+h3 {
+    font-size : 24px;
+    line-height : 1;    
+    /* 要素の高さ：24px（要素を配置するときの高さの基準） */
+}
+hgroup h2,h4,h5,h6 {
+    font-size : 16px; 
+    line-height : 1.5;   
+    /* 要素の高さ：24px（要素を配置するときの高さの基準） */
+}
+
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: solid 1px black;
+  /*実線 1px 黒*/
+}
+
+ul, ol {
+  background: #fcfcfc;/*背景色*/
+  padding: 0.5em 0.5em 0.5em 2em;/*ボックス内の余白*/
+}
+
+ul li, ol li {
+  line-height: 1.5; /*文の行高*/
+  padding: 0.5em 0; /*前後の文との余白*/
+}
+
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+  }
